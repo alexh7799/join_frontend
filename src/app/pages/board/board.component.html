@@ -1,0 +1,137 @@
+<div class="board-container">
+    <main class="responsive-content">
+        <div class="head-desktop">
+            <div class="header-board">
+                <h1 class="board">Board</h1>
+                <div class="find-add-task-container">
+                    <div class="find-task" id="findTask" tabindex="0">
+                        <input class="find-task-input" id="find-task-input-desktop" type="search"
+                            placeholder="Find Task" oninput="filterTasks(this)">
+                        <img src="assets/icons/line.svg" alt="">
+                        <button class="find-task-button" type="submit"
+                            oninput="filterTasks('find-task-input-desktop')"><img
+                                src="assets/icons/search-default.svg" alt=""></button>
+                    </div>
+                    <div class="add-task" onclick="showAddTaskDetails('todo')">
+                        Add Task
+                        <img src="assets/icons/add-white.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="head">
+            <div class="d-flex-sb-c">
+                <h1 class="board">Board</h1>
+                <div class="add-task" onclick="showAddTaskDetails('todo')">
+                    <img style="height: 25px; width: 25px;" src="assets/icons/add-white.svg" alt="">
+                </div>
+            </div>
+            <div class="find-add-task">
+                <div class="find-task" id="findTask" tabindex="0">
+                    <input class="find-task-input" id="find-task-input-mobile" type="search" placeholder="Find Task"
+                        oninput="filterTasks(this)">
+                    <div class="d-flex-c-c gap-5">
+                        <img src="assets/icons/line.svg" alt="">
+                        <button class="find-task-button" oninput="filterTasks('find-task-input-mobile')"
+                            type="submit"><img src="assets/icons/search-default.svg" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="overlay-not-task-find" id="overlay-not-task-find">
+            <div *ngIf="noTaskFind" class="split-spliter-fields">
+                <div class="not-task-find">
+                    <p style="color: #a8a8a8;">No task find!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="split" id="container-tasker">
+            <div>
+                <div class="spliter-header">
+                    <p style="font-size: 18px; font-weight: bold; color: #42526e;">To do</p>
+                    <img class="btn" onclick="showAddTaskDetails('todo')" src="assets/icons/plus-default.svg" alt="">
+                </div>
+                <div class="task-container drop-zone" id="todo-container"
+                    ondrop="handleDrop(event, 'todo'); handleDragLeave('todo-container')"
+                    ondragover="allowDrop(event); handleDragOver('todo-container')"
+                    ondragleave="handleDragLeave('todo-container')">
+                    <app-task *ngFor="let task of tasks.todotask" [task]="task"></app-task>
+                    <div *ngIf="tasks.todotask == []" class="split-spliter-fields" id="task">
+                        <div class="no-task" id="noTask">
+                            <p style="color: #a8a8a8;">No task To do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="spliter-header">
+                    <p style="font-size: 18px; font-weight: bold; color: #42526e;">In progress</p>
+                    <img class="btn" onclick="showAddTaskDetails('progress')" src="assets/icons/plus-default.svg"
+                        alt="">
+                </div>
+                <div class="task-container drop-zone" id="progress-container"
+                    ondrop="handleDrop(event, 'progress'); handleDragLeave('progress-container')"
+                    ondragover="allowDrop(event); handleDragOver('progress-container')"
+                    ondragleave="handleDragLeave('progress-container')">
+                    <app-task *ngFor="let task of tasks.progresstask" [task]="task"></app-task>
+                    <div *ngIf="tasks.progresstask == []" class="split-spliter-fields" id="task">
+                        <div class="no-task" id="noTask">
+                            <p style="color: #a8a8a8;">No task To do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="spliter-header">
+                    <p style="font-size: 18px; font-weight: bold; color: #42526e;">Await feedback</p>
+                    <img class="btn" onclick="showAddTaskDetails('awaiting')" src="assets/icons/plus-default.svg"
+                        alt="">
+                </div>
+                <div class="task-container drop-zone" id="await-container"
+                    ondrop="handleDrop(event, 'awaiting'); handleDragLeave('await-container')"
+                    ondragover="allowDrop(event); handleDragOver('await-container')"
+                    ondragleave="handleDragLeave('await-container')">
+                    <app-task *ngFor="let task of tasks.awaitingtask" [task]="task"></app-task>
+                    <div *ngIf="tasks.awaitingtask == []" class="split-spliter-fields" id="task">
+                        <div class="no-task" id="noTask">
+                            <p style="color: #a8a8a8;">No task To do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="spliter-header">
+                    <p style="font-size: 18px; font-weight: bold; color: #42526e;">Done</p>
+                </div>
+                <div class="task-container drop-zone" id="done-container"
+                    ondrop="handleDrop(event, 'done'); handleDragLeave('done-container')"
+                    ondragover="allowDrop(event); handleDragOver('done-container')"
+                    ondragleave="handleDragLeave('done-container')">
+                    <app-task *ngFor="let task of tasks.donetask" [task]="task"></app-task>
+                    <div *ngIf="tasks.donetask == []" class="split-spliter-fields" id="task">
+                        <div class="no-task" id="noTask">
+                            <p style="color: #a8a8a8;">No task To do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="overlay-edit-task" id="overlay-edit-task" onclick="closeEditOverlay(event)">
+
+    </div>
+
+    <div id="addtask-tem" class="overlay-edit-task" onclick="closePopOverlay(event)">
+
+    </div>
+
+    <div id="overlay-to-board" class="overlay-to-board">
+        <div class="info-to-board">
+            <p>Task added to board</p>
+            <img src="assets/icons/board.svg" alt="">
+        </div>
+    </div>
+</div>

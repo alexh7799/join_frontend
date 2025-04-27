@@ -1,0 +1,93 @@
+@import '../../styles.scss';
+@import '../login/login.component.scss';
+
+
+.log-in-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+
+  >.log-in {
+    justify-self: center;
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 4px;
+  width: 230px;
+}
+
+#password-icon-1,
+#password-icon-2 {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 990;
+  height: 25px;
+  width: 25px;
+  flex: 1 1 0px;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+  display: none;
+}
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.ppcb {
+  padding-left: 8px;
+  color: $--imprint-link;
+}
+
+.ppcb a {
+  color: $--turq;
+  text-decoration: none;
+}
+
+.ppcb a:hover {
+  text-decoration: underline;
+}
+
+
+.overlay-successfull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: -100vw;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.25s ease-in-out;
+  background-color: #33333353;
+}
+
+.overlay-suess-contact {
+  top: 0;
+  bottom: 0;
+}
+
+.suess-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $--darkgrey;
+  padding: 10px 20px;
+  border-radius: 15px;
+  gap: 10px;
+  color: $--item-color;
+}
+
+.pass-icon-container {
+  position: relative;
+}

@@ -1,0 +1,380 @@
+@import '../../../styles.scss';
+
+h1 {
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56.4px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 20px 0 5px 0;
+}
+
+h2 {
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 32.4px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 10px 0;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+p {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.container {
+    position: relative;
+}
+
+.blue-vline {
+    background-color: $--blue;
+    height: 3px;
+    width: 67px;
+}
+
+.blue-hline {
+    background-color: $--blue;
+    width: 2px;
+    height: 60px;
+}
+
+.deskop-line {
+    display: none;
+}
+
+.grey-vline {
+    background-color: $--grey;
+    width: 2px;
+    height: 65px;
+    margin: 0 15px 0 15px;
+}
+
+.header-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-summary p {
+    font-size: 20px;
+}
+
+.container-summary {
+    padding:  40px 0 90px 0;
+    display: flex;
+    flex-direction: column;
+} 
+
+.content-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-summary {
+    background-color: $--item-color;
+    border: 0.5px solid $--border-grey;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 10px 15px 10px;
+    flex: 1;
+    box-shadow: 0 0 4px 0 $--border-grey;
+    cursor: pointer;
+    min-height: 123px;
+}
+
+.item-summary:hover {
+    transform: scale(1.05);
+    background-color: $--darkgrey;
+}
+
+.item-summary:hover p{
+    color: white;
+}
+
+.item-summary:hover span{
+    color: white;
+}
+
+.item-summary:hover .icon-item-to-done {
+    background-color: white;
+}
+
+.item-summary:hover .icon-item-to-done img {
+    filter: invert(19%) sepia(13%) saturate(1304%) hue-rotate(176deg)
+      brightness(18%) contrast(90%);
+    transform: scale(1.02);
+}
+
+.urgent-container {
+    padding: 15px  10px 15px 10px;
+    min-height: 103px !important;
+}
+
+.urgent-container div span {
+    align-self: start;
+}
+
+.icon-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.icon-item-to-done {
+    background-color: $--darkgrey;
+    align-self: center;
+}
+
+.item-to-done {
+    padding-top: 10px;
+}
+
+.icon-item-urgent {
+    background-color: $--orange;
+    align-self: center;
+}
+
+.num-style {
+    font-size: 47px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.date-style {
+    font-weight: 700;
+    margin: 0;
+    align-self: flex-start;
+}
+
+span {
+    font-size: 14px;
+    text-align: center;
+}
+
+.greeting {
+    background-color: $--bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: fadeOut 1.5s ease-in-out 0.5s forwards;
+
+}
+
+.greeting p {
+    font-size: 36px;
+}
+
+.name-summary {
+    font-size: 47px !important;
+    color: $--blue;
+    text-transform: capitalize;
+}
+
+.summary {
+    padding: 20px;
+}
+
+@keyframes fadeOut {
+    0% {
+        display: flex;
+        background-color: $--bg;
+    }
+
+    100% {
+        display: none;
+        background-color: transparent;
+        color: transparent;
+    }
+}
+
+
+@media (min-width: 827px) {
+    .container {
+        height: 100%;
+    }
+
+    .summary {
+        padding: 20px;
+    }
+
+    .header-summary {
+        margin-top: 20px;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .header-summary h1 {
+        font-size: 56px;
+        margin: 0;
+    }
+
+    .header-summary p {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .container-summary {
+        padding-bottom: 20px;
+    }
+
+    .deskop-line {
+        display: block;
+    }
+
+    .mobile-line {
+        display: none;
+    }
+
+    .grey-vline {
+        height: 75px;
+        margin: 0 25px 0 25px;
+    }
+
+    .num-style {
+        font-size: 64px;
+    }
+
+    .date-style {
+        font-size: 21px !important;
+    }
+
+    .text-container span{
+        font-size: 20px;
+    }
+
+    .task-summary {
+        justify-content: end;
+    }
+
+    .greeting p {
+        font-size: 36px;
+    }
+    
+    .name-summary {
+        font-size: 47px !important;
+        color: $--blue;
+    }
+}
+
+@media (min-width: 870px) {
+    .summary {
+        padding: 20px 30px;
+    }
+    
+    .header-summary h1 {
+        font-size: 61px;
+    }
+
+    .header-summary p {
+        font-size: 27px;
+    }
+    
+    .greeting {
+        margin-left: 250px !important;
+    }
+}
+
+@media (min-width: 940px) {
+    .summary {
+        padding: 20px 60px;
+    }
+}
+
+@media (min-width: 1080px) {
+    .summary {
+        padding: 50px;
+    }
+
+    .container {
+        display: flex;
+
+    }
+
+    .container-summary {
+        flex-direction: row;
+    }
+
+    .content-summary {
+        width: auto;
+        flex: 1;
+    }
+}
+
+@media (min-width: 1100px) {
+    .summary {
+        padding: 60px;
+    }
+
+    .greeting {
+        flex: 1;
+        height: 100%;
+        margin-left: 25px !important;
+        margin-right: 25px;
+        background-color: transparent;
+        animation: none;
+        position: relative;
+    }
+
+    .greeting p {
+        margin: 0;
+        line-height: normal;
+    }
+
+}
+
+@media (min-width: 1190px) {
+    .summery {
+        padding:  80px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .summery {
+        padding:  95px;
+    }
+
+    .summary-container {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        width: 1920px !important;
+    }
+}

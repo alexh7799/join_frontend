@@ -1,0 +1,20 @@
+<div *ngIf="task.type == 'todo'" class="move-btn">
+    <img src="assets/icons/arrow-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'progress', task.id)">
+</div>
+<div *ngIf="task.type == 'progress'" class="d-flex-c-c gap-5 move-btn">
+    <img src="assets/icons/arrow-up-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'todo', task.id)">
+    <img src="assets/icons/arrow-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'awaiting', task.id)">
+</div>
+<div *ngIf="task.type == 'awaiting'" class="d-flex-c-c gap-5 move-btn">
+    <img src="assets/icons/arrow-up-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'progress', task.id)">
+    <img src="assets/icons/arrow-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'done', task.id)">
+</div>
+<div *ngIf="task.type == 'done'" class="move-btn">
+    <img src="assets/icons/arrow-up-dropdown.svg"
+        onclick="event.stopPropagation(); fetchNewType(event, 'awaiting', task.id)">
+</div>

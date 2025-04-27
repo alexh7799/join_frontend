@@ -1,0 +1,7 @@
+<div *ngFor="let user of users" class="contact-item" tabindex="0" (click)="showContactDetails(user.id)">
+    <span class="contact-icon center" [style]="'background-color: {{user.color}};'">{{user.initials}}</span>
+    <div class="contact-details">
+        <span class="contact-name">{{user.capitalizedUserName}}</span>
+        <span class="contact-email">{{user.email}}</span> 
+    </div>
+</div>

@@ -1,0 +1,7 @@
+
+
+<div *ngFor="let users of usergroup" class="contact-group">
+    <h3 class="group-title">{{users.alphabet}}</h3>
+    <div class="divider-contact"></div>  
+    <app-contact-item [users]="users.users"></app-contact-item>
+</div>

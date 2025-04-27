@@ -1,0 +1,32 @@
+<div class="spliter-fields" id="task{{task.id}}" (click)="showEditTask(task.id, 'bigCard')" draggable="true" (dragstart)="handleDrag(task.id)" (dragend)="handleDragEnd($event, task.id)">
+    <div class="task">
+        <div class="task-header">
+            <div class="d-flex-sb-c">
+                <div class="${taskCategory}-task-header">
+                    {{task.cat}}
+                </div>
+                <app-arrows [task]="task"></app-arrows>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="task-text-bold">
+            {{task.title}}
+        </div>
+        <div class="task-text">
+            <p>{{task.descr}}<p>
+        </div>
+        <div *ngIf="task.subtask == []" class="subtasks-container"></div>
+        <div *ngIf="task.subtask != []" class="subtasks-container">
+            <progress class="progressbar" value="{{task.subtask.min}}" max="{{task.subtask.max}}"></progress>
+        <p style="font-size: 12px;">{{task.subtask.min}}/{{task.subtask.max}} Subtasks</p>
+    </div>
+    <div class="task-footer"><div class="avatar-div" id="avatar-container{{task.id}}">
+    </div>
+            <div>
+                <img src="assets/icons/{{task.prio}}.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

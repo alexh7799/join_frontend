@@ -1,0 +1,258 @@
+@import '../../styles.scss';
+
+.checked {
+    content: url("/assets/icons/checkbox-checked.svg");
+}
+
+.remember-me-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.remember-me-container p {
+    margin: 0;
+}
+
+.sign-up {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.imprint {
+    bottom: 0px;
+    padding: 20px 16px;
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.imprint a {
+    color: $--imprint-link;
+    text-decoration: none;
+}
+
+.imprint a:hover {
+    transition: all 0.1s ease-in-out;
+    color: $--turq;
+    scale: 1.025;
+}
+
+.log-in {
+    font-size: 47px;
+    font-weight: 700;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background-color: $--base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px 16px;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flexer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    max-width: 420px;
+    width: 100%;
+    ;
+}
+
+.login-text-input {
+    border: 1px solid $--input-text;
+    border-radius: 10px;
+    font-size: 21px;
+    padding: 10px 21px;
+    outline: none;
+    width: 100%;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+    display: none;
+}
+
+#name-input {
+    position: relative;
+    background: url("/assets/icons/user.svg") no-repeat scroll 420px;
+    background-position-x: 94%;
+    background-position-y: center;
+    background-size: 25px 25px;
+    padding-right: 20px;
+}
+
+#email-input {
+    position: relative;
+    background: url("/assets/icons/letter.svg") no-repeat scroll 420px;
+    background-position-x: 94%;
+    background-position-y: center;
+    background-size: 25px 25px;
+    padding-right: 20px;
+}
+
+#password-icon {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    flex: 1 1 0px;
+}
+
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.login-text-input:focus {
+    border: 1px solid $--turq;
+}
+
+::placeholder {
+    color: $--input-text;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-row button {
+    width: 180px;
+}
+
+button {
+    padding: 12px 16px !important;
+    font-weight: 500;
+    font-size: 16px !important;
+}
+
+@media (min-width: 800px) {
+
+    .login-form button {
+        padding: 15px 24px;
+        font-size: 21px;
+    }
+
+    .login-form {
+        padding: 24px 32px;
+    }
+
+    .sign-up {
+        position: fixed;
+        top: 10px;
+        right: 27px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .btn-row {
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
+
+    .log-in {
+        font-size: 56px;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+    }
+
+    .log-in::after {
+        content: "";
+        width: 90%;
+        height: 3px;
+        background: $--turq;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    #result {
+        color: #FF8190;
+        font-size: 12px;
+        padding-top: 4px;
+        display: block;
+        text-align: left;
+    }
+
+    .remember-me-container {
+        margin-top: 20px;
+    }
+
+    .flexer {
+        gap: 25px;
+    }
+
+}
+
+@media (min-height: 540px) {
+    .form-container {
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 800px) and (max-height: 832px) {
+    .imprint {
+        position: relative !important;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    section {
+        z-index: 5;
+    }
+
+    .login-logo {
+        z-index: 1;
+    }
+
+    .login-logo .login-svg {
+        z-index: 1;
+        width: 45px !important;
+        height: 64px !important;
+    }
+}
