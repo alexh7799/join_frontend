@@ -22,9 +22,14 @@ export class BoardComponent {
         type: "todo",
         subtask: [{
           title: "",
-          min: "",
-          max: ""
+          min: 0,
+          max: 1
         }],
+        contact: [{
+          id: 1,
+          initials: "MM",
+          color: "#252525"
+        }]
       },
       {
         id: 2,
@@ -35,9 +40,14 @@ export class BoardComponent {
         type: "todo",
         subtask: [{
           title: "",
-          min: "",
-          max: ""
+          min: 2,
+          max: 5
         }],
+        contact: [{
+          id: 1,
+          initials: "MM",
+          color: "#252525"
+        }]
       }
     ],
     progresstask: [],
